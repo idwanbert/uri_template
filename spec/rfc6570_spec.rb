@@ -386,4 +386,19 @@ describe URITemplate::RFC6570 do
   end
 
 end
-
+   http://www.apache.org/licenses/LICENSE-2.0
+{
+  "Level 1 Examples" : 
+  {
+    "level": 1,
+    "variables": {
+       "var"   : "value",
+       "hello" : "Hello World!"
+     },
+     "testcases" : [
+        ["{var}", "value"],
+        ["{hello}", "Hello%20World%21"]
+     ]
+  }
+}URITemplate.new('{variable}').expand('variable' => 'value') #=> "value"
+URITemplate.new('{?variable}').expand('variable' => 'value') #=> "?variable=value"
